@@ -1,0 +1,22 @@
+﻿@model AdventureWorksNS.Data.Product
+
+@{
+    ViewData["Title"] = "Detalle de Producto - " + @Model.Name;
+}
+
+<h2>Detalle de Producto</h2>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>ID del Producto</dt>
+        <dd>@Model.ProductId</dd>
+        <dt>Nombre del Producto</dt>
+        <dd>@Model.Name</dd>
+        <dt>ID de la categoria del Producto</dt>
+        <dd>@Model.ProductCategoryId</dd>
+        <dt>Precio</dt>
+        <dd>@Model.ListPrice.ToString("C")</dd>
+        <dt>Color del Producto</dt>
+        <dd>@Model.Color</dd>
+    </dl>
+</div>

@@ -1,0 +1,36 @@
+﻿@using AdventureWorksNS.Data
+@model IEnumerable<Product>
+@{
+    string titulo = "Productos que cuestan mas que " + ViewData["PrecioMaximo"];
+    ViewData["Title"] = titulo;
+}
+
+<h2>@titulo</h2>
+@if (Model is null)
+{
+    <div>No existen productos.</div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre Producto</th>
+                <th>Color</th>
+                <th>Precio</th>
+                <th>Costo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Product p in Model)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.Color</td>
+                    <td>@p.ListPrice</td>
+                    <td>@p.StandardCost</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

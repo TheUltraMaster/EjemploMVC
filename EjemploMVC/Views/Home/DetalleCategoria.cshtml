@@ -1,0 +1,22 @@
+﻿@using System.Collections.Generic;
+@using AdventureWorksNS.Data;
+@model IEnumerable< AdventureWorksNS.Data.Product>
+
+@{
+    ViewData["Title"] = "Detalle de categoria - " + @ViewBag.nombre;
+
+        }
+<h1>@ViewBag.nombre</h1>
+       <h1>@ViewBag.ID</h1>
+   <ul>
+@foreach(Product p in Model){
+
+      <a asp-controller="Home" asp-action="DetalleProducto" asp-route-id="@p.ProductId">
+                    <li>@p.Name - $@p.ListPrice</li>
+                </a>
+}
+
+
+    
+     
+</ul>
